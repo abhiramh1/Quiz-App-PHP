@@ -1,0 +1,345 @@
+/*Header style and animation*/
+header{ 
+	background-color: #F1F1F1;
+    text-align: center;
+	padding: 20px;
+	font-family:Verdana;
+	background-image:url("images/maine.jpg");
+	color: black;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration:4s;
+	animation-delay:1s;
+	animation-iteration-count: 5;
+}
+
+
+@-webkit-keyframes example{
+    0%   {color:black;}
+    25%  {color:yellow;}
+    50%  {color:lightblue}
+    75%  {color:white;}
+    100% {color:red;}}
+
+#anim1{
+	-webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*Hover animation*/
+#anim2:hover{
+	-webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+}
+
+
+.cent {
+	text-align:center;
+}
+
+/*Article*/
+.art {
+    margin-left: auto;margin-right: auto;
+}
+
+/*Aside*/
+.asi {
+    text-align: center; width: 25%; padding: 1%; border: 2px solid red; float:right;
+}
+
+aside{
+	float:right;
+}
+
+
+.enha a{
+	color: green;
+	font-size: 1em;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	background-color: #333;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.menu li a:hover {
+    background-color: #111;
+}
+
+
+
+body {
+    background-image: url("images/bg.jpg");
+
+}
+
+/*Short hand*/
+h1.fontstyle{
+	font-family: Georgia, serif;
+}
+
+img{
+	border-radius:10px;
+}
+img:hover{
+	filter: alpha(opacity=50);
+	opacity:.5;
+}
+
+
+p:first-letter{
+	color:black;
+	font-size:30px;
+}
+
+
+#desc{
+	float:left;
+	width:55%;
+}
+
+#map{
+	float:right;
+	width:45%;
+	
+}
+#caption{
+	
+	margin-bottom:50px;
+	padding-top:0px;
+	text-align:center;
+	color:purple
+}
+
+caption{
+	color:blue;
+}
+
+table{
+	 
+	background-color: white;
+	border-collapse: collapse;
+	/*float:center;*/
+	border: white 1px;
+	
+
+}
+ table, th, td {
+	
+	 border: 1px solid black;
+	 height: 20px;
+	 text-align:center;
+	 /*float:center;*/
+	 
+	 
+ }
+
+table th{
+	background-color:grey;
+}
+
+#id{
+	width:45%;
+	float:left;
+}
+/*.asi{
+	
+	text-align: center; width: 25%; padding: 1%; border: 2px solid red; float:right;
+}*/
+ 
+ /*#wrap{
+	 float:none;
+	 width:50%;
+	 margin-right:0px;
+	 margin-top:30px;
+	 text-align:center;
+ }*/
+ 
+
+	
+
+
+.footer {
+	float:left;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #efefef;
+    color: black;
+    text-align: center;
+	padding-top:10px;
+	padding-bottom:10px;
+    position: fixed;
+}
+
+/* quiz */
+
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width : 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+}
+}
+
+
+
+.login {
+    background: #eceeee;
+    border: 1px solid #42464b;
+    border-radius: 6px;
+    height: 257px;
+    margin: 20px auto 0;
+    width: 298px;
+}
+.login h1 {
+    background-image: linear-gradient(top, #f1f3f3, #d4dae0);
+    border-bottom: 1px solid #a6abaf;
+    border-radius: 6px 6px 0 0;
+    box-sizing: border-box;
+    color: #727678;
+    display: block;
+    height: 43px;
+    font: 600 14px/1 'Open Sans', sans-serif;
+    padding-top: 14px;
+    margin: 0;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.2), 0 1px 0 #fff;
+}
+#username, #password {
+    background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
+    border: 1px solid #a1a3a3;
+    border-radius: 4px;
+    box-shadow: 0 1px #fff;
+    box-sizing: border-box;
+    color: #696969;
+    height: 39px;
+    margin: 31px 0 0 29px;
+    padding-left: 37px;
+    transition: box-shadow 0.3s;
+    width: 240px;
+}
+#username:focus, #password:focus {
+    box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
+    outline: 0;
+}
+
+.login_button {
+    margin: 20px 95px; width: 100px;
+}
+
+.button_link {
+    align-items: normal;
+    background-color: rgba(0,0,0,0);
+    border-color: rgb(0, 0, 238);
+    border-style: none;
+    box-sizing: content-box;
+    color: rgb(0, 0, 238);
+    cursor: pointer;
+    display: inline;
+    font: inherit;
+    height: auto;
+    padding: 0;
+    perspective-origin: 0 0;
+    text-align: start;
+    text-decoration: underline;
+    transform-origin: 0 0;
+    width: auto;
+    -moz-appearance: none;
+    -webkit-logical-height: 1em; /* Chrome ignores auto, so we have to use this hack to set the correct height  */
+    -webkit-logical-width: auto; /* Chrome ignores auto, but here for completeness */
+}
+
+.warning_red {
+    color: #ff0000;
+}
+
+
