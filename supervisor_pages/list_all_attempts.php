@@ -1,10 +1,10 @@
 <?php include ('header.php') ?>
-
+<?php require ('../config/config.php') ?>
 <?php
 try {
     session_start();
 //database connection establishment
-    $con = mysqli_connect("localhost", "root", "abhiram", "quiz_test");
+    $con = mysqli_connect(LOCAL_HOST, USER, PASSWORD, DATABASE);
         $userName = $_POST["user_name"];
         $password = $_POST["password"];
         $checkLogin = "select * from `attempts`";

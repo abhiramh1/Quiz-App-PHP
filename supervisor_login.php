@@ -1,8 +1,10 @@
+<?php include('common/header.php') ?>
+<?php require ('config/config.php') ?>
 <?php
 try {
     session_start();
 //database connection establishment
-    $con = mysqli_connect("localhost", "root", "abhiram", "quiz_test");
+    $con = mysqli_connect(LOCAL_HOST, USER, PASSWORD, DATABASE);
     if ($_POST["login"]) {
         $userName = $_POST["user_name"];
         $password = $_POST["password"];
@@ -20,8 +22,6 @@ try {
     echo $e->getMessage();
 }
 ?>
-
-<?php include('common/header.php') ?>
 <div class="login">
     <form action="<?php $_PHP_SELF ?>" method="post">
         <input type="text" placeholder="Username" name="user_name" id="username">

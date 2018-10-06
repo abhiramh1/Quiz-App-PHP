@@ -1,9 +1,10 @@
 <?php include('header.php') ?>
+<?php require ('../config/config.php') ?>
 <?php
 try {
     session_start();
 //database connection establishment
-    $con = mysqli_connect("localhost", "root", "abhiram", "quiz_test");
+    $con = mysqli_connect(LOCAL_HOST, USER, PASSWORD, DATABASE);
     if ($_POST["search"]) {
         $studentNameOrId = $_POST["student_name"];
         $nameSplit = explode(" ",$studentNameOrId);
@@ -45,12 +46,18 @@ try {
 }
 ?>
 
-<div class="login">
-    <form action="<?php $_PHP_SELF ?>" method="post">
-        <input type="text" placeholder="Student Name / Number" name="student_name" id="username">
-        <input class="login_button" type="submit" name="search" value="Search">
-    </form>
-</div>
+    <?php session_start();
+    if (isset($_SESSION['id'])) { ?>
+        <div class="login">
+            <form action="<?php $_PHP_SELF ?>" method="post">
+                <input type="text" placeholder="Student Name / Number" name="student_name" id="username">
+                <input class="login_button" type="submit" name="search" value="Search">
+            </form>
+        </div>
+        <?php
+    } else {
+        echo '<h1 class="warning_red"> Un-Authorized </h1>' ;
+    } ?>
 <?php include('../common/footer.php') ?>
 
 

@@ -1,7 +1,8 @@
+<?php require ('config/config.php') ?>
 <?php
 //database connection establishment
 try {
-    $con = mysqli_connect("localhost", "root", "abhiram", "quiz_test");
+    $con = mysqli_connect(LOCAL_HOST, USER, PASSWORD, DATABASE);
         if (isset($_POST["submit"])) {
             $createdAt = date('Y-m-d H:i:s');
             $firstName = $_POST["firstname"];
