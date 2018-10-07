@@ -1,4 +1,4 @@
-<?php include ('header.php') ?>
+<?php include('header.php') ?>
 <?php require ('../config/config.php') ?>
 <?php
 try {
@@ -35,9 +35,27 @@ try {
         echo "<td>No Data Available</td>";
         echo "</tr>";
     }
+    if($_POST['update']) {
+        $studentId = $_POST['student_id'];
+        $score = $_POST['score'];
+        $updateQuery = "UPDATE `attempts` SET `score` = '$score' WHERE `student_number` = '$studentId'";
+        $updateRecord = $con->query($updateQuery);
+        if($updateRecord === false) {
+            echo "<br><b class='warning_red'> Student Record not found </b>";
+        }
+        header('location:update_record.php');
+    }
 } catch (Exception $e) {
     echo $e->getMessage();
 }
 ?>
+<div class="login">
+    <form action="<?php $_PHP_SELF ?>" method="post">
+        <input type="text" placeholder="StudentID" name="student_id" id="username">
+        <input type="number" min="0" max="10" placeholder="New Score" name="score" id="username">
+        <input class="login_button" type="submit" name="update" value="Update">
+    </form>
+</div>
+<?php include('../common/footer.php') ?>
 
-<?php include ('../common/footer.php') ?>
+

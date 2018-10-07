@@ -1,4 +1,4 @@
-<?php include ('header.php') ?>
+<?php include('header.php') ?>
 <?php require ('../config/config.php') ?>
 <?php
 try {
@@ -35,9 +35,25 @@ try {
         echo "<td>No Data Available</td>";
         echo "</tr>";
     }
+    if($_POST['delete']) {
+        $studentId = $_POST['student_id'];
+        $deleteQuery = "DELETE FROM `attempts` WHERE `student_number` = '$studentId'";
+        $deleteRecord = $con->query($deleteQuery);
+        if($deleteRecord === false) {
+            echo "<br><b class='warning_red'> Student Record not found </b>";
+        }
+        header('location:delete_record.php');
+    }
 } catch (Exception $e) {
     echo $e->getMessage();
 }
 ?>
+<div class="login">
+    <form action="<?php $_PHP_SELF ?>" method="post">
+        <input type="text" placeholder="Enter A StudentID to be Deleted" name="student_id" id="username">
+        <input class="login_button" type="submit" name="delete" value="Delete">
+    </form>
+</div>
+<?php include('../common/footer.php') ?>
 
-<?php include ('../common/footer.php') ?>
+

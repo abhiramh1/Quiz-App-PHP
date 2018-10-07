@@ -5,17 +5,17 @@ try {
     session_start();
 //database connection establishment
     $con = mysqli_connect(LOCAL_HOST, USER, PASSWORD, DATABASE);
-    $checkLogin = "select * from `attempts`";
+    $checkLogin = "select * from `attempts` WHERE no_of_attempts = 1 AND score = 3";
     $result = $con->query($checkLogin);
     echo "<table style='margin: 20px' border='1'>
-            <tr>
-                <th>Sl NO</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Student ID</th>
-                <th>No of Attempts</th>
-                <th>Score</th>
-            </tr>";
+                    <tr>
+                    <th>Sl NO</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Student ID</th>
+                    <th>No of Attempts</th>
+                    <th>Score</th>
+                    </tr>";
     if ($result->num_rows > 0) {
         $i = 1;
         while ($row = mysqli_fetch_array($result)) {
@@ -35,6 +35,7 @@ try {
         echo "<td>No Data Available</td>";
         echo "</tr>";
     }
+
 } catch (Exception $e) {
     echo $e->getMessage();
 }

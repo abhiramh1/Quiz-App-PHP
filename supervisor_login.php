@@ -13,10 +13,7 @@ try {
         $checkInvalidLoginAttemptsQuery = "SELECT `id`, `status` FROM `users` WHERE user_name = '$userName'";
         $checkInvalidLoginAttempts = $con->query($checkInvalidLoginAttemptsQuery);
         $checkInvalidLoginAttemptsResult = $checkInvalidLoginAttempts->fetch_assoc();
-
         if ($checkInvalidLoginAttemptsResult['status'] < 3) {
-
-
             if ($result->num_rows === 0 && $checkInvalidLoginAttempts->num_rows === 1) {
                 $status = $checkInvalidLoginAttemptsResult['status'] + 1;
                 $updateStatusQuery = "UPDATE `users` SET `status` = $status
