@@ -17,7 +17,7 @@
         <li><a href="/quiz/supervisor_pages/list_all_attempts.php">List All Attempts</a></li>
         <li><a href="/quiz/supervisor_pages/student_search.php">Student Report</a></li>
         <li><a href="/quiz/supervisor_pages/first_attempt_winners.php">First Attempt Winners</a></li>
-        <li><a href="#">< 50%</a></li>
+        <li><a href="/quiz/supervisor_pages/low_score.php">< 50%</a></li>
         <li><a href="/quiz/supervisor_pages/delete_record.php">Delete Data</a></li>
         <li><a href="/quiz/supervisor_pages/update_record.php">Update</a></li>
         <li style="float:right"><a href="/quiz/supervisor_logout.php">Logout</a></li>

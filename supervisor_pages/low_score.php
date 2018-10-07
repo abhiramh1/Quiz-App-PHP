@@ -6,8 +6,8 @@ try {
     if (isset($_SESSION['id'])) {
 //database connection establishment
         $con = mysqli_connect(LOCAL_HOST, USER, PASSWORD, DATABASE);
-        $maxScore = MAX_SCORE;
-        $checkLogin = "select * from `attempts` WHERE no_of_attempts = 1 AND score = '$maxScore'";
+        $minScore = MIN_SCORE;
+        $checkLogin = "select * from `attempts` WHERE no_of_attempts = 3 AND score <= '$minScore'";
         $result = $con->query($checkLogin);
         echo "<table style='margin: 20px' border='1'>
                     <tr>
