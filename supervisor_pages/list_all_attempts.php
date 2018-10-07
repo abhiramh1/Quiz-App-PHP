@@ -1,9 +1,11 @@
 <?php include ('header.php') ?>
 <?php require ('../config/config.php') ?>
 <?php
-try {
+
     session_start();
-//database connection establishment
+if (isset($_SESSION['id'])) {
+    try {
+    //database connection establishment
     $con = mysqli_connect(LOCAL_HOST, USER, PASSWORD, DATABASE);
     $checkLogin = "select * from `attempts`";
     $result = $con->query($checkLogin);
@@ -36,8 +38,10 @@ try {
         echo "</tr>";
     }
 } catch (Exception $e) {
-    echo $e->getMessage();
+     echo $e->getMessage();
+ }
+} else {
+    echo '<h1 class="warning_red"> Un-Authorized </h1>' ;
 }
 ?>
-
 <?php include ('../common/footer.php') ?>
