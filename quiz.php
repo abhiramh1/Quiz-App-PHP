@@ -49,19 +49,19 @@
                     </div>
                     <div class="col-75">
                         <label class="container">Melbourne
-                            <input type="radio" checked="checked" name="radio">
+                            <input type="radio" checked="checked" name="home_town" value="1">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">Ernakulam
-                            <input type="radio" name="radio">
+                            <input type="radio" name="home_town" value="2">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">Sydney
-                            <input type="radio" name="radio">
+                            <input type="radio" name="home_town" value="3">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">Mumbai
-                            <input type="radio" name="radio">
+                            <input type="radio" name="home_town" value="4">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -74,19 +74,19 @@
                     </div>
                     <div class="col-75">
                         <label class="container">Hindu
-                            <input type="checkbox" checked="checked">
+                            <input type="checkbox" checked="checked" name="religion[]" value="1">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">Christian
-                            <input type="checkbox">
+                            <input type="checkbox" name="religion[]" value="2">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">Muslim
-                            <input type="checkbox">
+                            <input type="checkbox" name="religion[]" value="3">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">Sikh
-                            <input type="checkbox">
+                            <input type="checkbox" name="religion[]" value="4">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -98,12 +98,13 @@
                         <label>Which is my home country?</label>
                     </div>
                     <div class="col-75">
-                        <select name="answers">
-                            <option value="australia">Australia</option>
-                            <option value="china">China</option>
-                            <option value="india">India</option>
-                            <option value="pakistan">Pakistan</option>
-                            <option value="japan">Japan</option>
+                        <select name="home_country">
+                            <option value="">Select Option</option>
+                            <option value="1">Australia</option>
+                            <option value="2">China</option>
+                            <option value="3">India</option>
+                            <option value="4">Pakistan</option>
+                            <option value="5">Japan</option>
                         </select>
                     </div>
                 </div>
