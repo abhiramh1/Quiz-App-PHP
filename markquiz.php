@@ -34,6 +34,19 @@ try {
             if ($_POST['quantity'] === "2011") {
                 $score = $score + 1;
             }
+            if(!empty($_POST['religion'])) {
+                foreach($_POST['religion'] as $value) {
+                    if($value === "1") {
+                        $score = $score + 1;
+                    }
+                    if($value === "2") {
+                        $score = $score + 1;
+                    }
+                    if($value === "3") {
+                        $score = $score + 1;
+                    }
+                }
+            }
             $createdAt = date('Y-m-d H:i:s');
             $firstName = $_POST["firstname"];
             $lastName = $_POST["lastname"];
